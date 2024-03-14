@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'wdb_impex',
+        'USER': 'wsu_impex',
+        'PASSWORD': 'Awesome@2021',
+        'HOST': 'localhost',
+        'PORT': 5432
     }
 }
 
@@ -126,6 +130,9 @@ STATICFILES_DIRS = [
 
 # Optional: Define the directory where collectstatic will put your static files for deployment
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
